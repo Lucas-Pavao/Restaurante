@@ -1,0 +1,125 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;800&display=swap');
+body{
+	margin: 0;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+
+.bloco{
+	width: 100vw;
+	height: 100vh;
+	background: #201b2c;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bloco-esquerda{
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.bloco-esquerda > h1{
+	color: #77ffc0;	
+}
+
+.bloco-direita{
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.card{
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px 35px ;
+	background: #2f2841;
+	border-radius: 20px;
+	box-shadow: 0px 10px 40px #00000056;
+}
+.btn{
+	width: 100%;
+	padding: 16px 0x;
+	margin: 25px;
+	border: none;
+	border-radius:8px;
+	outline:none;
+	text-transform: uppercase;
+	font-weight: 800;
+	letter-spacing: 3px;
+	color: #2b134b;
+	background: #00ff88;
+	cursor: pointer;
+	box-shadow: 0px 10px 40px 12px #00ff8052;
+	
+}
+
+.textformfield{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin:10px 0px;
+	
+}
+.textformfield > label{
+	
+	color:#f0ffffde;
+	margin-bottom: 10px;	
+}
+.textformfield > input{
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	padding: 15x;
+	background:#514869;
+	color:#f0ffffde;
+	font-size: 12pt;
+	box-shadow: 0px 10px 40px #00000056;
+	outline: none;
+	box-sizing: border-box;
+}
+.textformfield > input::placeholder{
+color: #f0ffff94;
+}
+
+table, th, td {
+border: 1px solid black;
+font-weight: 800;
+background-color: #DCEBE6;
+}
+
+table {
+border-collapse: collapse;
+margin: auto;
+}
+
+th, td{
+padding: 10px;
+text-align: center;
+width: 120px;
+}
+
+th{
+font-weight: bold;
+}
+
+
+tr:nth-child(even) {
+background-color: #DCEBE6;
+}
+
+tr:hover:nth-child(1n + 2) {
+background-color: #085F63;
+color: #fff;
+}
