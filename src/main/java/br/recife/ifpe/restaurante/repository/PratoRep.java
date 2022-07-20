@@ -18,7 +18,7 @@ public final class PratoRep implements GenericRepository<Prato, Integer>{
 
 	@Override
 	public void create(Prato p) {
-		String sql = "insert into tbl_prato(id, nome, descricao, preco) values (?,?,?,?)";
+		String sql = "insert into tbl_prato(id_prato, nome, descricao, preco) values (?,?,?,?)";
         
         try {
             PreparedStatement pstm = br.recife.ifpe.restaurante.dao.ConnectionManager.getCurrentConnection()
@@ -40,7 +40,7 @@ public final class PratoRep implements GenericRepository<Prato, Integer>{
 
 	@Override
 	public void update(Prato p) {
-String sql = "update tbl_prato set nome = ?, descricao = ?, preco = ? where id = ?";
+String sql = "update tbl_prato set nome = ?, descricao = ?, preco = ? where id_prato = ?";
         
         try {
             PreparedStatement pstm = br.recife.ifpe.restaurante.dao.ConnectionManager.getCurrentConnection()
@@ -63,7 +63,7 @@ String sql = "update tbl_prato set nome = ?, descricao = ?, preco = ? where id =
 
 	@Override
 	public Prato read(Integer i) {
-		String sql = "select * from tbl_prato where id = ?";
+		String sql = "select * from tbl_prato where id_prato = ?";
         
         try {
             PreparedStatement pstm = br.recife.ifpe.restaurante.dao.ConnectionManager.getCurrentConnection()
@@ -96,7 +96,7 @@ String sql = "update tbl_prato set nome = ?, descricao = ?, preco = ? where id =
 
 	@Override
 	public void delete(Integer i) {
-		 String sql = "delete from tbl_prato where id = ?";
+		 String sql = "delete from tbl_prato where id_prato = ?";
 	        
 	        try {
 	            

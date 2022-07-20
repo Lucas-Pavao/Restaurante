@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 
 <div class="bloco">
 <div class = "bloco-esquerda">
-	<h1>Clientes cadastrados</h1>
+	<h1>Pedidos cadastrados</h1>
 	<a href = "/">home</a>
 </div>
 <div class = "bloco-direita">
@@ -19,15 +19,18 @@
 	<div class="card">	
 	<table border="1">
 		
-		<tr><th>Nome</th><th>Telefone</th><th>E-mail</th><th>operacoes<th></tr>
+		<tr><th>id</th><th>data/Hora</th><th>Descricao</th><th>Preco<th></tr>
 	
-		<c:forEach items="${cliente}" var="item">
+		<c:forEach items="${pedido}" var="item">
 			<tr>
-				<td>${item.nome}</td>
-				<td>${item.telefone}</td>
-				<td>${item.email}</td>
-				<td><a href="/adm/visualizaClienteCpf/${item.cpf}">visualizar</a></td>
-			</tr>
+				<td>${item.id}</td>
+				<td>${item.datahora}</td>
+				<td>${item.observacao}</td>
+				<td>${item.preco}</td>
+				<td>${item.id_cliente}</td>
+				<td>${item.id_prato}</td>
+				<td>${item.id_pagamento}</td>
+				</tr>
 		</c:forEach>
 		
 	</table>

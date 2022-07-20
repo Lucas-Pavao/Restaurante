@@ -21,7 +21,8 @@
 	<button class="btn"><a href = "/adm/telaAdms">Visualizar administradores cadastrados</a></button><br>
 	<button class="btn"><a href = "/adm/telaPratos">Cadastrar pratos</a></button><br>
 	<button class="btn"><a href = "/adm/telaClientes">Visualizar clientes cadastrados</a></button><br>
-		<button class="btn"><a href = "/adm/telaPagamentos">Cadastrar formas de pagamento</a></button><br>
+	<button class="btn"><a href = "/adm/telaPedidos">Visualizar Pedidos</a></button><br>
+	<button class="btn"><a href = "/adm/telaPagamentos">Cadastrar formas de pagamento</a></button><br>
 	<h1>${msg4}</h1>
 	<h1>${msg5}</h1>
 	</div>

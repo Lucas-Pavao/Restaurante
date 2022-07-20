@@ -12,78 +12,83 @@ import br.recife.ifpe.restaurante.repository.ClienteRep;
 import br.recife.ifpe.restaurante.repository.Facade;
 
 import br.recife.ifpe.restaurante.entities.Cliente;
+import br.recife.ifpe.restaurante.entities.Prato;
 
 @Controller
 public class ClienteController {
-	
 
 	@RequestMapping("/")
 	public String index(Model m) {
-		
+
 		return "index";
-		
+
 	}
-	
+
 	@RequestMapping("/cliente/telaCadastro")
 	public String telaCadastro(Model m) {
-		
+
 		return "cliente/cadastro";
 	}
-	
+
 	@RequestMapping("/cliente/cadastro")
 	public String cadastro(Model m, Cliente c) {
-		
+
 		Facade.getCurrentInstance().create(c);
-		
-		m.addAttribute("msg","Cliente cadastrado com sucesso!");
-		
+
+		m.addAttribute("msg", "Cliente cadastrado com sucesso!");
+
 		return "index";
-		
+
 	}
-	
+
 	@RequestMapping("/cliente/list")
 	public String listar(Model m) {
-		
+
 		List<Cliente> clientes = Facade.getCurrentInstance().readAllCliente();
-		
+
 		m.addAttribute("cliente", clientes);
-		
+
 		return "cliente/clientes";
-	
+
 	}
-	
+
 	@RequestMapping("/cliente/visualiza/{cpf}")
 	public String visualiza(Model m, @PathVariable("cpf") String cpf) {
-		
+
 		Cliente c = Facade.getCurrentInstance().readCliente(cpf);
-		
+
 		m.addAttribute("cliente", c);
-		
+
 		return "cliente/cliente";
-		
+
 	}
-	
+
 	@RequestMapping("/cliente/telaLogin")
 	public String telaLogin(Model m) {
 		return "cliente/login";
 	}
-	
-	
+
 	@RequestMapping("/cliente/login")
-	public String login (Model m, String email, String senha) {
-	
-	Cliente teste = ClienteRep.Login(email, senha);
-	
-	
-	if(teste != null) {	
-		m.addAttribute("msg2","Login com sucesso!");
-		return "cliente/inicio";	
+	public String login(Model m, String email, String senha) {
+
+		Cliente teste = ClienteRep.Login(email, senha);
+
+		if (teste != null) {
+			
+			List<Prato> prato1 = Facade.getCurrentInstance().readAllPrato();
+			
+			m.addAttribute("prato", prato1);
+			m.addAttribute("msg2", "Login com sucesso!");
+			
+			
+			
+			return "cliente/inicio";
+		}
+
+		else {
+			m.addAttribute("msg3", "E-mail ou senha incorretos!");
+			return "/cliente/login";
+		}
 	}
-	
-	else {
-	m.addAttribute("msg3","E-mail ou senha incorretos!");
-	return "/cliente/login";
-	}
-}
-	
+
 }
