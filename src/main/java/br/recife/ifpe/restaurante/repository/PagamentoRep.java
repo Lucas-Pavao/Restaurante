@@ -19,7 +19,7 @@ public final class PagamentoRep implements GenericRepository<Pagamento, Integer>
 
 	@Override
 	public void create(Pagamento p) {
-		String sql = "insert into tbl_pagamento(id, descricao) values (?,?)";
+		String sql = "insert into tbl_pagamento(id_pagamento, descricao) values (?,?)";
 
 		try {
 			PreparedStatement pstm = br.recife.ifpe.restaurante.dao.ConnectionManager.getCurrentConnection()
@@ -40,7 +40,7 @@ public final class PagamentoRep implements GenericRepository<Pagamento, Integer>
 
 	@Override
 	public void update(Pagamento p) {
-		String sql = "update tbl_pagamento set descricao = ? where id = ?";
+		String sql = "update tbl_pagamento set descricao = ? where id_pagamento = ?";
 
 		try {
 			PreparedStatement pstm = br.recife.ifpe.restaurante.dao.ConnectionManager.getCurrentConnection()
@@ -61,7 +61,7 @@ public final class PagamentoRep implements GenericRepository<Pagamento, Integer>
 
 	@Override
 	public Pagamento read(Integer i) {
-		String sql = "select * from tbl_pagamento where id = ?";
+		String sql = "select * from tbl_pagamento where id_pagamento = ?";
 
 		try {
 			PreparedStatement pstm = br.recife.ifpe.restaurante.dao.ConnectionManager.getCurrentConnection()
@@ -92,7 +92,7 @@ public final class PagamentoRep implements GenericRepository<Pagamento, Integer>
 
 	@Override
 	public void delete(Integer i) {
-		String sql = "delete from tbl_pagamento where id = ?";
+		String sql = "delete from tbl_pagamento where id_pagamento = ?";
 
 		try {
 

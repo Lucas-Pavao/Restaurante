@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.recife.ifpe.restaurante.entities.Adm;
 import br.recife.ifpe.restaurante.entities.Cliente;
 import br.recife.ifpe.restaurante.entities.Pagamento;
+import br.recife.ifpe.restaurante.entities.Pedido;
 import br.recife.ifpe.restaurante.entities.Prato;
 import br.recife.ifpe.restaurante.repository.AdmRep;
 import br.recife.ifpe.restaurante.repository.Facade;
@@ -125,7 +126,7 @@ public class AdmController {
 		return "adm/cadPagamentos";
 	}
 	
-	@RequestMapping("adm/cadPagamentos")
+	@RequestMapping("/adm/cadPagamentos")
 	public String CadastroPagamentos(Model m, Pagamento p) {
 		
 		Facade.getCurrentInstance().create(p);
@@ -133,6 +134,17 @@ public class AdmController {
 		m.addAttribute("msg5","Pagamento cadastrado com sucesso!");
 		
 		return "adm/inicio";
+	}
+	
+	@RequestMapping("/adm/telaPedidos")
+	public String visualizarPedidos(Model m) {
+		
+		List<Pedido> pedido1 = Facade.getCurrentInstance().readAllPedido();
+		
+		m.addAttribute("pedido", pedido1);
+		
+		return "/adm/vizualizarPedidos";
+	
 	}
 	
 }
